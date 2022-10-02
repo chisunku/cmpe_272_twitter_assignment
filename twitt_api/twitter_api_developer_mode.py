@@ -24,6 +24,7 @@ def retrieve_tweets():
     print("res: ",result)
     return json.dumps(result)
 
+# Author Ujwala
 @app.route('/post',methods=["POST","GET"])
 def post_tweet():
     print("coming here");
@@ -38,6 +39,7 @@ def post_tweet():
     )
     return json.dumps(response)
 
+# Author Suma
 @app.route('/delete',methods=["POST","GET"])
 def delete_tweet():
     info = request.get_json()['twitter_id']
@@ -48,6 +50,7 @@ def delete_tweet():
     response = client.delete_tweet(info)
     return json.dumps(response)
 
+# Author Chinmayi
 @app.route('/my_tweet',methods=["POST","GET"])
 def my_tweet():
     client = tweepy.Client(bearer_token=config.bearer_token)
