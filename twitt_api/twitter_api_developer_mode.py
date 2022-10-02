@@ -5,6 +5,8 @@ from flask import Flask,request
 import requests
 app = Flask(__name__)
 
+
+# Author Chinmayi
 @app.route("/get",methods=["POST","GET"])
 def retrieve_tweets():
     client = tweepy.Client(bearer_token=config.bearer_token)
